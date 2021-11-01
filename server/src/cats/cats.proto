@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package first; // 包名
+
+service CatsService {
+rpc FindOne (ById) returns (Cat) {} // 暴露方法
+}
+
+// message定义结构
+message ById { // 参数
+int32 id = 1;
+}
+
+message Cat { // 返回类型
+int32 id = 1;
+string name = 2;
+}
